@@ -1,7 +1,8 @@
 import os
 import json
 
-CLIENT_SECRETS_PATH = "/Users/david/Projects/beyond-dancing/backend/app/client_secrets.json"
+basedir = os.path.abspath(os.path.dirname(__file__))
+CLIENT_SECRETS_PATH = os.path.join(basedir, "client_secrets.json")
 CLIENT_ID = json.loads(
     open(CLIENT_SECRETS_PATH, 'r').read())['web']['client_id']
 
