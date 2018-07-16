@@ -11,4 +11,4 @@ login_manager = LoginManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-import models, routes
+import app.models, app.routes
