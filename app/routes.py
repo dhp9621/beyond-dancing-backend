@@ -6,6 +6,7 @@ from oauth2client import client
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 from oauth2client import crypt
 
+@app.route("/")
 @app.route("/index")
 def index():
     return "Hello"
