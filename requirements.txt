@@ -104,9 +104,6 @@ simplegeneric==0.8.1
 spyder==3.1.2
 SQLAlchemy==1.1.5
 statsmodels==0.8.0
-subprocess32==3.2.7
-sympy==1.0
-traitlets==4.3.1
 unicodecsv==0.14.1
 virtualenv==16.0.0
 virtualenv-clone==0.3.0
@@ -115,7 +112,4 @@ Werkzeug==0.11.15
 widgetsnbextension==1.2.6
 wrapt==1.10.8
 WTForms==2.2.1
-xlrd==1.0.0
-XlsxWriter==0.9.6
-xlwings==0.10.2
-xlwt==1.2.0
+
