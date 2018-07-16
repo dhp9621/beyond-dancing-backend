@@ -1,7 +1,7 @@
 from app import app, db
 from flask import Flask, jsonify, request, url_for, abort, g, render_template, make_response
 from app.models import User
-from config import CLIENT_ID
+from app.config import CLIENT_ID
 from oauth2client import client
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 from oauth2client import crypt
