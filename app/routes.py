@@ -9,7 +9,7 @@ from oauth2client import crypt
 @app.route("/")
 @app.route("/index")
 def index():
-    return "Hello"
+    return make_response("Ok", 200)
 
 @app.route('/auth/google', methods = ['POST'])
 def login():
@@ -69,14 +69,6 @@ def getUser():
     return jsonify({"username":user.username}) 
 
 
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
-
-@app.route("/abc", methods = ["GET"])
-def abc():
-	return "abc"
 
 def debug(s):
     print(s)
