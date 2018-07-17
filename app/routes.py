@@ -88,6 +88,25 @@ def uploadVideo():
     db.session.commit()
     return jsonify(title=video.title, video_url=video_url, thumbnail_url=thumbnail_url, likes=video.likes, dislikes=video.dislikes)
 
+@app.route('/getUserVideos', methods = ['POST'])
+def getUserVideos():
+    try:
+        email = request.values.get('email')
+    except AttributeError:
+        response = make_response(json.dumps("email not provided"), 401)
+        response.headers['Content-Type'] = 'application/json'
+        return response
+
+    videos = Video.query.filter_by(user_email=email).all()
+    responses = []
+    for video in videos:
+        response_dict = {}
+        response_dict['title'] = video.title
+        response_dict['thumbnail_url'] = video.thumbnail_url
+        response_dict['video_url'] = video.video_url
+        responses.append(response_dict)
+    return jsonify(responses)
+
 
 @app.route('/user', methods = ['POST'])
 def getUser():
@@ -100,7 +119,7 @@ def getUser():
         return response
 
     user = User.query.filter_by(email=email).first()
-    return jsonify({"username":user.username}) 
+    return jsonify({"username":user.username})
 
 
 
