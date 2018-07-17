@@ -86,7 +86,7 @@ def uploadVideo():
     video = Video(user_email=email, title=title, video_url=video_url, thumbnail_url=thumbnail_url, likes=0, dislikes=0)
     db.session.add(video)
     db.session.commit()
-    return make_response(json.dumps("Video uploaded"), 200)
+    return jsonify(title=video.title, video_url=video_url, thumbnail_url=thumbnail_url, likes=video.likes, dislikes=video.dislikes)
 
 
 @app.route('/user', methods = ['POST'])
