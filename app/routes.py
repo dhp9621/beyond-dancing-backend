@@ -70,7 +70,7 @@ def uploadVideo():
         response.headers['Content-Type'] = 'application/json'
         return response
 
-    file_key = hashlib.sha224(email+title).hexdigest()
+    file_key = hashlib.sha224((email+title).encode('utf-8')).hexdigest()
     s3 = boto3.client('s3')
 
     try:
