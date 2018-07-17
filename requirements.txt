@@ -105,4 +105,6 @@ unicodecsv==0.14.1
 virtualenv==16.0.0
 virtualenv-clone==0.3.0
 Werkzeug==0.11.15
-
+boto3==1.7.58
+awscli==1.15.59
+botocore==1.10.58
